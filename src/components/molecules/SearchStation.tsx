@@ -1,12 +1,11 @@
-import { ArrowLeft, Search } from '@v3-bordeaux/akar-icons'
-import { Input } from '@/components/atoms'
-import { useContext, useState } from 'react'
-import { useGetVcubsQuery } from '@/redux/services/tbmWSApi'
-import { StationDetails } from '@/components/molecules/StationDetails'
-import { Backdrop } from '@/components/atoms/Backdrop'
-import MapContext, { MapContextContent } from '@/components/molecules/Maps/Map/MapContext'
-import { fromLonLat } from 'ol/proj'
 import { Station } from '@/_types/tbm/ws/station'
+import { Backdrop, Input } from '@/components/atoms'
+import MapContext, { MapContextContent } from '@/components/molecules/Maps/Map/MapContext'
+import { StationDetails } from '@/components/molecules/StationDetails'
+import { useGetVcubsQuery } from '@/redux/services/tbmWSApi'
+import { ArrowLeft, Search } from '@v3-bordeaux/akar-icons'
+import { fromLonLat } from 'ol/proj'
+import { useContext, useState } from 'react'
 
 export default function SearchStation() {
   const { map } = useContext<MapContextContent>(MapContext)

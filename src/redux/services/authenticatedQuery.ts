@@ -16,8 +16,6 @@ export default function authenticatedFetchBaseQuery(params) {
     console.log(result)
     if (result.error && result.error.status === 401) {
       api.dispatch(invalidateToken())
-
-      location.href = '/login'
     }
     return result
   }
