@@ -1,7 +1,6 @@
 import { H2 } from '@/components/atoms'
 import { Bicycle } from '@v3-bordeaux/akar-icons'
 import dayjs from 'dayjs'
-import Link from 'next/link'
 
 import type { RentInProgress } from '@/_types/cykleo/rent'
 import type { Station } from '@/_types/tbm/ws/station'
@@ -22,7 +21,7 @@ function CurrentRentCard({ rent, stationStart }: ICurrentRentCard) {
   const paidTime = -timeLeftInMinutes
 
   return (
-    <>
+    <article className="relative rounded-3xl text-text-1 bg-secondary-1 font-sans shadow-brut px-5 py-4 border-2 border-text-1">
       <article className="flex flex-col">
         <span>Mon vélo</span>
         <div className="flex space-between items-end gap-4">
@@ -44,10 +43,8 @@ function CurrentRentCard({ rent, stationStart }: ICurrentRentCard) {
             )}
           </div>
         </div>
-        <Link href="/rents/in-progress" className="after:absolute after:inset-0">
-          <span className="hidden">Voir le détail de la location en cours</span>
-        </Link>
       </article>
+
       <article className="hidden absolute bottom-0 left-0 right-0 w-full h-44">
         <span>Durée: {durationInMinutes} minute(s)</span>
         <span>
@@ -56,7 +53,7 @@ function CurrentRentCard({ rent, stationStart }: ICurrentRentCard) {
         </span>
         <span>Parti de {stationStart?.name}</span>
       </article>
-    </>
+    </article>
   )
 }
 

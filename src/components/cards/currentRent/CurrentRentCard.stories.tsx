@@ -1,20 +1,17 @@
-import { Meta, StoryFn } from '@storybook/react'
-import BaseTemplate, { ICurrentRentCard } from './CurrentRentCard'
+import { Meta, StoryObj } from '@storybook/react'
+import CurrentRentCard from './CurrentRentCard'
 import { mockProps } from './CurrentRentCard.mocks'
 
 export default {
-  title: 'cards/CurrentRentCard',
-  component: BaseTemplate,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {}
-} as Meta<typeof BaseTemplate>
+  component: CurrentRentCard
+} as Meta<typeof CurrentRentCard>
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof BaseTemplate> = (args) => <BaseTemplate {...args} />
+type Story = StoryObj<typeof CurrentRentCard>
 
-export const Base = Template.bind({})
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
+export const FreeTimeLeft: Story = {
+  args: mockProps.freeTimeLeft
+}
 
-Base.args = {
-  ...mockProps.base
-} as ICurrentRentCard
+export const PaidTime: Story = {
+  args: mockProps.paidTime
+}
