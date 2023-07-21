@@ -1,13 +1,12 @@
-import { useEffect, useState } from 'react'
 import dayjs from 'dayjs'
+import { useEffect, useState } from 'react'
 
-import { useGetVcubsQuery } from '@/redux/services/tbmWSApi'
 import { useGetStationQuery } from '@/redux/services/cykleoApi'
+import { useGetVcubsQuery } from '@/redux/services/tbmWSApi'
 import { Bicycle } from '@v3-bordeaux/akar-icons'
 
 import type { RentInProgress } from '@/_types/cykleo/rent'
 import type { Station } from '@/_types/tbm/ws/station'
-import { H2 } from '@/components/atoms'
 import Link from 'next/link'
 
 const freeTimeInMinutes = 30
@@ -52,7 +51,7 @@ export default function RentInProgressCard({ rent }: { rent: RentInProgress }) {
             {isFreeTimeSpent ? (
               <>
                 <hgroup className="flex items-end gap-1">
-                  <H2 className="font-bold">{paidTime}</H2>
+                  <h2 className="text-h2 font-bold">{paidTime}</h2>
                   <span>min</span>
                 </hgroup>
                 <span>Temps payant</span>

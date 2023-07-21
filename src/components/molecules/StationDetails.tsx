@@ -1,6 +1,4 @@
-import { createPortal } from 'react-dom'
-import { H2 } from '@/components/atoms'
-import { Bicycle, BicycleElectric, ChevronLeft, Parking } from '@v3-bordeaux/akar-icons'
+import { Bicycle, BicycleElectric, Parking } from '@v3-bordeaux/akar-icons'
 
 import type { Station } from '@/_types/tbm/ws/station'
 
@@ -12,7 +10,7 @@ export function StationDetails({ station }: StationDetailsProps) {
   return (
     station && (
       <article>
-        <H2 className="text-left mb-4">{station.name}</H2>
+        <h2 className="text-h2 text-left mb-4">{station.name}</h2>
 
         <div className="flex gap-8">
           <div className="flex items-center gap-2">

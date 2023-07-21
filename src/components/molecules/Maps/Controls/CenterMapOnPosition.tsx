@@ -1,9 +1,8 @@
-import { useContext, useEffect, useState } from 'react'
-import MapContext, { MapContextContent } from '@/components/molecules/Maps/Map/MapContext'
-import { Location } from '@v3-bordeaux/akar-icons'
-import { useGeolocation } from '@/hooks/useGeolocation'
 import { BottomSheet } from '@/components/molecules/BottomSheet'
-import { H2 } from '@/components/atoms'
+import MapContext, { MapContextContent } from '@/components/molecules/Maps/Map/MapContext'
+import { useGeolocation } from '@/hooks/useGeolocation'
+import { Location } from '@v3-bordeaux/akar-icons'
+import { useContext, useEffect, useState } from 'react'
 
 export function CenterMapOnPosition() {
   const { map } = useContext<MapContextContent>(MapContext)
@@ -49,7 +48,7 @@ export function CenterMapOnPosition() {
         isOpen={isAskPermissionBottomSheetOpen}
         onClick={() => setIsAskPermissionBottomSheetOpen(false)}
       >
-        <H2>Impossible de vous géolocaliser</H2>
+        <h2 className="text-h2">Impossible de vous géolocaliser</h2>
         <p className="mt-2">
           Vérifiez que vous avez autorisé le site à accéder à votre géolocalisation. Assurez-vous
           également qu&apos;elle soit activée sur votre appareil.

@@ -1,7 +1,5 @@
 export * from './Backdrop'
 export * from './Button'
 export * from './Card'
-export * from './H1'
-export * from './H2'
 export * from './Input'
 export * from './Spinner'

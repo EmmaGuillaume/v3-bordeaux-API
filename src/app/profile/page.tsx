@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 
 import { useAppSelector } from '@/redux/hooks'
 
-import { H1 } from '@/components/atoms/H1'
 import { Informations } from '@/components/organisms/Account/Informations'
 import { RentCompleted } from '@/components/organisms/Account/RentCompleted'
 import { RentInProgress } from '@/components/organisms/Account/RentInProgress'
@@ -23,7 +22,7 @@ export default function Home() {
   }, [])
   return (
     <main className="px-4">
-      <H1 className="!my-10 text-center">V3 Bordeaux</H1>
+      <h1 className="text-h1 !my-10 text-center">V3 Bordeaux</h1>
       <div className="flex flex-col gap-4">
         <Informations />
         <RentInProgress />

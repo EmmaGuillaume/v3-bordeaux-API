@@ -1,12 +1,12 @@
 'use client'
-import { useEffect, useState } from 'react'
-import { useAppDispatch } from '@/redux/hooks'
 import { setToken } from '@/redux/features/cykleoTokenSlice'
+import { useAppDispatch } from '@/redux/hooks'
 import { useLoginMutation } from '@/redux/services/cykleoApi'
+import { useEffect, useState } from 'react'
 
-import { Input, Button, H1 } from '@/components/atoms'
-import { useRouter } from 'next/navigation'
+import { Button, Input } from '@/components/atoms'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 export default function Login() {
   const { push } = useRouter()
@@ -35,7 +35,7 @@ export default function Login() {
   return (
     <main className="container flex flex-col justify-between h-screen py-8">
       <hgroup className="text-center">
-        <H1>Bovélo</H1>
+        <h1 className="text-h1">Bovélo</h1>
         <p>Accéder au service Vcub</p>
       </hgroup>
 

@@ -1,11 +1,11 @@
 'use client'
 
-import { H2, Spinner } from '@/components/atoms'
+import { Spinner } from '@/components/atoms'
 import { useGetRentsInProgressQuery } from '@/redux/services/cykleoApi'
 
-import Link from 'next/link'
-import { ChevronLeft, Heart, TriangleAlert } from '@v3-bordeaux/akar-icons'
 import RentInProgressResume from '@/components/molecules/RentInProgressResume'
+import { ChevronLeft, Heart, TriangleAlert } from '@v3-bordeaux/akar-icons'
+import Link from 'next/link'
 
 export default function RentInProgress() {
   const rentsQuery = useGetRentsInProgressQuery(null)
@@ -22,7 +22,7 @@ export default function RentInProgress() {
           <ChevronLeft strokeWidth="2" className="" />
           <span className="hidden">Retour à la carte</span>
         </Link>
-        <H2>Mon vélo</H2>
+        <h2 className="text-h2">Mon vélo</h2>
       </section>
 
       {rentsQuery.isLoading ? (
@@ -52,10 +52,10 @@ export default function RentInProgress() {
           </section>
 
           <section className="col-span-4 flex flex-col gap-2">
-            <H2>À propos du vélo</H2>
+            <h2 className="text-h2">À propos du vélo</h2>
 
             <article className="flex flex-col gap-2 rounded-2xl border-2 border-text-1 bg-primary-1 px-4 py-2">
-              <H2>Emprunt gratuit</H2>
+              <h2 className="text-h2">Emprunt gratuit</h2>
               <p className="text-sm md:text-md">
                 Vous avez 30 minutes gratuites lorsque vous empruntez un vélo
               </p>

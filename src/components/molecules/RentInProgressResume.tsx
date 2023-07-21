@@ -1,14 +1,13 @@
-import { useEffect, useState } from 'react'
 import dayjs from 'dayjs'
+import { useEffect, useState } from 'react'
 
-import { useGetVcubsQuery } from '@/redux/services/tbmWSApi'
 import { useGetStationQuery } from '@/redux/services/cykleoApi'
+import { useGetVcubsQuery } from '@/redux/services/tbmWSApi'
 
 import type { Rent } from '@/_types/cykleo/rent'
 import type { Station } from '@/_types/tbm/ws/station'
-import { H2 } from '../atoms'
-import RentInProgressMap from './Maps/RentInProgressMap'
 import { Alarm, Money } from '@v3-bordeaux/akar-icons'
+import RentInProgressMap from './Maps/RentInProgressMap'
 
 const freeTimeInMinutes = 30
 
@@ -48,7 +47,7 @@ export default function RentInProgressResume({ rent }: RentInProgressResumeProps
 
   return (
     <section className="flex flex-col gap-2">
-      <H2>Mon trajet</H2>
+      <h2 className="text-h2">Mon trajet</h2>
 
       {stationStart && (
         <article className="rounded-2xl border-2 border-text-1 overflow-hidden">

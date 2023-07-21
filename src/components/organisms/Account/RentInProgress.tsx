@@ -1,11 +1,9 @@
 'use client'
-import React from 'react'
-import { cykleoApi, useGetRentsInProgressQuery } from '@/redux/services/cykleoApi'
+import { useGetRentsInProgressQuery } from '@/redux/services/cykleoApi'
 
-import { H2 } from '@/components/atoms'
 import RentInProgressCard from '@/components/molecules/RentInProgressCard'
-import Link from 'next/link'
 import { useAppSelector } from '@/redux/hooks'
+import Link from 'next/link'
 
 export function RentInProgress() {
   const { isLoading, isFetching, data, error } = useGetRentsInProgressQuery(null)
@@ -33,7 +31,7 @@ export function RentInProgress() {
     if (!cyckleoToken || error) {
       content = (
         <>
-          <H2>Connectez-vous</H2>
+          <h2 className="text-h2">Connectez-vous</h2>
           <p>Pour afficher votre vélo, vos trajets, et plus encore</p>
           <Link href="/login" className="after:absolute after:inset-0">
             <span className="hidden">Se connecter</span>
