@@ -1,5 +1,7 @@
 import type { Station } from '@/_types/tbm/ws/station'
 import AccountButton from '@/components/buttons/account/AccountButton'
+import BikesOrPlacesButton from '@/components/buttons/bikesOrPlaces/BikesOrPlacesButton'
+import FavoritesStationsButton from '@/components/buttons/favoritesStations/FavoritesStationsButton'
 import PositionButton from '@/components/buttons/position/PositionButton'
 import RentInfoCard from '@/components/cards/rentInfo/RentInfoCard'
 import StationSearchBar from '@/components/stationSearchBar/StationSearchBar'
@@ -20,7 +22,9 @@ export default function MapLayout({ stationsList }: IMapLayout) {
         <RentInfoCard isLogged={true} userHasSubscription={false} />
 
         <div className="flex flex-col gap-2">
+          <FavoritesStationsButton />
           <PositionButton />
+          <BikesOrPlacesButton />
         </div>
       </div>
     </main>
