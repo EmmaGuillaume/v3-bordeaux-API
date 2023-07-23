@@ -24,7 +24,7 @@ export default function StationSearchBar({ stationsList }: IStationSearchBar) {
     <section className="pointer-events-none w-full h-full">
       {isSearching && <Backdrop onClick={() => setIsSearching(false)} />}
 
-      <section className="flex flex-col h-full">
+      <section className="relative z-50 flex flex-col h-full">
         <div className="pointer-events-auto relative bg-background-2 border-2 border-text-1 rounded-full flex items-center">
           {isSearching ? (
             <button
@@ -50,10 +50,12 @@ export default function StationSearchBar({ stationsList }: IStationSearchBar) {
         </div>
 
         {isSearching && (
-          <ul className="relative flex flex-col gap-2 overflow-scroll pt-6 pb-32">
+          <ul className="absolute left-0 top-full flex flex-col gap-2 overflow-scroll w-full pt-6 pb-32">
             {stationsMatch.map((station) => (
               <li key={station.id}>
-                <StationCard station={station} />
+                <button className="w-full">
+                  <StationCard station={station} />
+                </button>
               </li>
             ))}
           </ul>
